@@ -23,59 +23,43 @@ if(isset($_POST['submit'])){
     $temp_avocado = htmlspecialchars($_POST['avocado']);
 
     if(is_numeric($temp_nigiri) == true){
-        if ($temp_nigiri >= 0){
             if($temp_nigiri <= 50){
             $n = $temp_nigiri;
         }else{
-            $error .= "<br>Maximum number is reached on X";
+            $error .= "<br>Maximum order is reached";
             }
         }else{
-            $error .= "<br>X is lower than 0";
-            }
-        }else{
-            $error .= "<br>Please input a number on X";
-            }                
+            $error .= "<br>Please add a correct amount";
+            }         
     
     if(is_numeric($temp_california) == true){
-        if ($temp_california >= 0){
             if($temp_california <= 50){
             $c = $temp_california;
         }else{
-            $error .= "<br>Maximum number is reached on Y";
+            $error .= "<br>Maximum order is reached";
             }
         }else{
-            $error .= "<br>Y is lower than 0";
-            }
-        }else{
-            $error .= "<br>Please input a number on Y";
+            $error .= "<br>Please add a correct amount";
             }
             
     if(is_numeric($temp_tempura) == true){
-        if ($temp_tempura >= 0){
             if($temp_tempura <= 50){
             $t = $temp_tempura;
         }else{
-            $error .= "<br>Maximum number is reached on Y";
+            $error .= "<br>Maximum order is reached>";
             }
         }else{
-            $error .= "<br>Y is lower than 0";
-            }
-        }else{
-            $error .= "<br>Please input a number on Y";
+            $error .= "<br>Please add a correct amount";
             }
     
     if(is_numeric($temp_avocado) == true){
-        if ($temp_avocado >= 0){
             if($temp_avocado <= 50){
             $a = $temp_avocado;
         }else{
-            $error .= "<br>Maximum number is reached on Y";
+            $error .= "<br>Maximum order is reached>";
             }
         }else{
-            $error .= "<br>Y is lower than 0";
-            }
-        }else{
-            $error .= "<br>Please input a number on Y";
+            $error .= "<br>Please add a correct amount";
             }
 
     if(empty($error)){
@@ -95,7 +79,9 @@ if(isset($_POST['submit'])){
 </head>
 <body>
     <div style="font-size: 50px;">Receipt</div>
-// 1 echo only
+
+    <?php $order = $n+$c+$t+$a; echo "Total order = " . $order . "<br>"; ?>
+    
 </body>
 </html>
     
