@@ -14,7 +14,7 @@
             <br>
 
             <p>California- Please choose amount</p>
-            <input type="number" id="six1" name="california" min="0" value="0">
+            <input type="number" id="six1" name="cali" min="0" value="0">
             <br>
 
             <p>Tempura- Please choose amount</p>
