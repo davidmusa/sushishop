@@ -96,39 +96,38 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div style="font-size: 50px;">Receipt</div><br>
+    
+    <div>
+        <?php 
+            $number_or_errors = count($errors);
+            if ($number_or_errors > 0) {
+                //show the errors
+                for ($i = 0; $i < $number_or_errors; $i++) {
+                    echo $errors[$i] . "<br>";
+                }
+            } else {
+                //show detailed receipt
+                echo "Nigiri : " . $quantity_nigiri . " ........... " . $price_nigiri * $quantity_nigiri . "$<br>";
+                echo "Cali : " . $quantity_cali . " ........... " . $price_cali * $quantity_cali. "$<br>";
+                echo "Tempura : " . $quantity_tempura . " ........... " . $price_tempura * $quantity_tempura. "$<br>";
+                echo "Avocado : " . $quantity_avocado . " ........... " . $price_avocado * $quantity_avocado. "$<br>";
 
-    <?php 
-        $number_or_errors = count($errors);
-        if ($number_or_errors > 0) {
-            //show the errors
-            for ($i = 0; $i < $number_or_errors; $i++) {
-                echo $errors[$i] . "<br>";
+                //calculate TPS and TVQ
+                $sub_total = 0;
+                $sub_total += $price_nigiri * $quantity_nigiri + $price_cali * $quantity_cali + $price_tempura * $quantity_tempura + $price_avocado * $quantity_avocado;
+
+                $total = $sub_total + $sub_total * $tps;
+                $pay_tps = $sub_total * $tps;
+                $pay_tvq = $total * $tvq;
+                $total += $total * $tvq;
+                echo "<br><br>Your subtotal is: " . $sub_total . "$<br><br>";
+                echo "TPS is: " . $pay_tps . "$<br>";
+                echo "TVQ is: " . $pay_tvq . "$<br><br>";
+                echo "________________________" . "<br><br>";
+                echo "Total is: " . $total . "$";
             }
-        } else {
-            //show detailed receipt
-            echo "Nigiri : " . $quantity_nigiri . " ........... " . $price_nigiri * $quantity_nigiri . "$<br>";
-            echo "Cali : " . $quantity_cali . " ........... " . $price_cali * $quantity_cali. "$<br>";
-            echo "Tempura : " . $quantity_tempura . " ........... " . $price_tempura * $quantity_tempura. "$<br>";
-            echo "Avocado : " . $quantity_avocado . " ........... " . $price_avocado * $quantity_avocado. "$<br>";
-
-            //calculate TPS and TVQ
-            $sub_total = 0;
-            $sub_total += $price_nigiri * $quantity_nigiri + $price_cali * $quantity_cali + $price_tempura * $quantity_tempura + $price_avocado * $quantity_avocado;
-
-            $total = $sub_total + $sub_total * $tps;
-            $pay_tps = $sub_total * $tps;
-            $pay_tvq = $total * $tvq;
-            $total += $total * $tvq;
-            echo "<br><br>Your subtotal is: " . $sub_total . "$<br><br>";
-            echo "TPS is: " . $pay_tps . "$<br>";
-            echo "TVQ is: " . $pay_tvq . "$<br><br>";
-            echo "________________________" . "<br><br>";
-            echo "Total is: " . $total . "$";
-        }
-    
-
-    ?>
-    
+        ?>
+    </div>
 </body>
 </html>
     

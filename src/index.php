@@ -8,7 +8,7 @@
 </head>
 <body>
     MENU for SUSHISHOP
-    <form action="delivery.php" method="post">
+    <form action="index.php" method="post" onclick="demand()">
             <p>Nigiri- Please choose amount</p>
             <input type="number" name="nigiri" min="0" value="0">
             <br>
@@ -27,5 +27,30 @@
 
             <input type="submit" value="submit" name="submit">
         </form>
+
+        <?php 
+        
+        ?>
+
+    <script>
+
+    function demand() {
+        console.log("This box is number: ");
+
+        document.getElementById("result").innerHTML = "Loading...";
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("result").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "delivery.php=", true);
+        xhttp.send();
+    }
+
+
+    </script>      
+
 </body>
 </html>
