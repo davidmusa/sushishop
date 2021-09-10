@@ -9,10 +9,10 @@ session_start();
 
 $validated = false;
 
-    $n = 0;
-    $c = 0;
-    $t = 0;
-    $a = 0;
+    $price_nigiri = 2;
+    $price_cali = 3;
+    $price_tempura = 4;
+    $price_avocado = 1;
 
     $error = "";
 
@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
                 $validated = true;
             } 
         }
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +80,14 @@ if(isset($_POST['submit'])){
 <body>
     <div style="font-size: 50px;">Receipt</div>
 
-    <?php $order = $n+$c+$t+$a; echo "Total order = " . $order . "<br>"; ?>
+    <?php 
+    
+    if ($validated == true) {
+    $order = $n+$c+$t+$a; 
+    echo "Total order = " . $order . "<br>"; 
+    }
+
+    ?>
     
 </body>
 </html>
