@@ -8,25 +8,24 @@
 </head>
 <body>
     MENU for SUSHISHOP
-    <form action="login.php" method="post">
+    <form action="delivery.php" method="post">
             <p>Nigiri- Please choose amount</p>
-            <input type="number" id="six1" name="nigiri" min="0" value="0">
+            <input type="number" name="nigiri" min="0" value="0">
             <br>
 
             <p>California- Please choose amount</p>
-            <input type="number" id="six1" name="cali" min="0" value="0">
+            <input type="number" name="cali" min="0" value="0">
             <br>
 
             <p>Tempura- Please choose amount</p>
-            <input type="number" id="six1" name="tempura" min="0" value="0">
+            <input type="number" name="tempura" min="0" value="0">
             <br>
 
             <p>Avocado- Please choose amount</p>
-            <input type="number" id="six1" name="avocado" min="0" value="0">
+            <input type="number" name="avocado" min="0" value="0">
             <br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="submit" name="submit">
         </form>
-
 </body>
 </html>
