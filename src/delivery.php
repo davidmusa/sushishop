@@ -95,9 +95,9 @@ if (isset($_POST['submit'])) {
     <title>Receipt</title>
 </head>
 <body>
-    <div style="font-size: 50px;">Receipt</div><br>
+    +
     
-    <div>
+    <div id="result">
         <?php 
             $number_or_errors = count($errors);
             if ($number_or_errors > 0) {

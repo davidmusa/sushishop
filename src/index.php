@@ -8,7 +8,7 @@
 </head>
 <body>
     MENU for SUSHISHOP
-    <form action="index.php" method="post">
+    <form method="post">
             <p>Nigiri- Please choose amount</p>
             <input type="number" name="nigiri" min="0" value="0">
             <br>
@@ -25,7 +25,7 @@
             <input type="number" name="avocado" min="0" value="0">
             <br>
 
-            <button type="submit" value="submit" onclick="demand()">Preview</button>
+            <button type="button" onclick="loadDoc()">Change Content</button>
         </form>
 
         <?php 
@@ -34,8 +34,8 @@
 
     <script>
 
-    function demand() {
-        console.log("The order is: ");
+    function loadDoc() {
+        console.log();
 
         document.getElementById("result").innerHTML = "Loading...";
 
