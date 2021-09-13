@@ -30,6 +30,8 @@ $quantity_avocado = 0;
 //input validation
 $errors = Array();
 
+sleep(1);
+
 if (isset($_POST['submit'])) {
     if (isset($_POST['nigiri'])) {
         $quantity_nigiri = htmlspecialchars($_POST['nigiri']);
@@ -95,7 +97,6 @@ if (isset($_POST['submit'])) {
     <title>Receipt</title>
 </head>
 <body>
-    +
     
     <div id="result">
         <?php 
